@@ -2,10 +2,11 @@
 
 set -e
 
-/usr/bin/systemctl start httpd.service
+for i in /opt/os/iso/*.iso
+do
+    path=`basename $i | sed 's/.iso//'`
+    /bin/mkdir -p /opt/ks/os/${path}
+    /usr/bin/mount -r -o loop -t iso9660 ${i} /opt/ks/os/${path}
+done
 
-cat <<EOF >> ~/.bashrc
-trap '/usr/bin/systemctl stop httpd.service; exit 0' TERM
-EOF
-
-exec /bin/bash
+exec /usr/sbin/httpd -D FOREGROUND
