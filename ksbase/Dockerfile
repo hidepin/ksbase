@@ -2,7 +2,7 @@ FROM centos:7.2.1511
 MAINTAINER Hidetoshi Imai <hidepin@gmail.com>
 
 RUN yum -y install httpd && \
-    ln -s /opt/ks /var/www/html/
+    ln -s /opt/docker/ks /var/www/html/
 
 EXPOSE 80
 

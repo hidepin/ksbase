@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  ksbase:
+    build: ksbase
+    hostname: ksbase
+    privileged: true
+    ports:
+      - "8001:80"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /opt/docker/ks/iso:/opt/docker/ks/iso:ro
+      - /opt/docker/ks/volumes/kbbase/kscfg:/opt/docker/ks/kscfg:ro
