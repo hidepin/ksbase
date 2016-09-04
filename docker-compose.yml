@@ -10,4 +10,4 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /opt/docker/ks/iso:/opt/docker/ks/iso:ro
-      - /opt/docker/ks/volumes/kbbase/kscfg:/opt/docker/ks/kscfg:ro
+      - /opt/docker/ks/volumes/ksbase/kscfg:/opt/docker/ks/kscfg:ro
