@@ -2,7 +2,7 @@
 
 set -e
 
-for i in /opt/os/iso/*.iso
+for i in /opt/docker/ks/iso/*.iso
 do
     path=`basename $i | sed 's/.iso//'`
     /bin/mkdir -p /opt/docker/ks/os/${path}
